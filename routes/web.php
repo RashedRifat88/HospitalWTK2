@@ -32,13 +32,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
 Route::get('/add_doctor_view', [AdminController::class, 'addDoctorView']);
 Route::post('/upload_doctor', [AdminController::class, 'uploadDoctor']);
 Route::get('/show_appointments', [AdminController::class, 'showAppointments']);
 Route::get('/approve_appointment/{id}', [AdminController::class, 'approveAppointment']);
 Route::get('/cancel_appointment_a/{id}', [AdminController::class, 'cancelAppointment_a']);
+Route::get('/show_doctor', [AdminController::class, 'showDoctor']);
+Route::get('/delete_doctor/{id}', [AdminController::class, 'deleteDoctor']);
+Route::get('/update_doctor/{id}', [AdminController::class, 'updateDoctor']);
+Route::post('/edit_doctor/{id}', [AdminController::class, 'editDoctor']);
+
 Route::post('/appointment', [HomeController::class, 'appointment']);
 Route::get('/myappointment', [HomeController::class, 'myAppointment']);
 Route::get('/cancel_appointment/{id}', [HomeController::class, 'cancelAppointment']);
-

@@ -37,14 +37,12 @@
 
         @include('admin.sidebar')
 
-        <!-- partial -->
 
-        <!-- partial:partials/_navbar.html -->
 
 
         @include('admin.navbar')
 
-        <div class="container-fluid page-body-wrapper" style="background-color: black;">
+        <!-- <div class="container-fluid page-body-wrapper" style="background-color: #850870;">
 
             <div class="container" align="center" style="padding-top: 100px;">
 
@@ -65,7 +63,7 @@
                 <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
-
+                    
                     <div style="padding: 15px">
                         <label>Doctor Name</label>
                         <input type="text" style="color: black; border-radius: 10px;" name="name" placeholder="write doctor name" required>
@@ -109,7 +107,89 @@
             </div>
 
 
+        </div> -->
+
+
+
+        ///
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+
+
+                @if (session()->has('message'))
+
+                <div class="alert alert-success alert-dismissible" role="alert">
+
+                    {{session()->get('message')}}
+
+                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                @endif
+
+                <div class="row">
+
+                    <div class="col-8 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Update Doctor Form</h4>
+
+                                <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
+
+                                    @csrf
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Name</label>
+                                        <input type="text" class="form-control" style="background-color:white; color:black; " name="name" placeholder="write doctor name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Phone</label>
+                                        <input type="number" class="form-control" style="background-color:white; color:black; " name="phone" placeholder="write phone number" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Speciality</label>
+                                        <br />
+                                        <select name="speciality" style="color:black;">
+                                            <option>--select--</option>
+                                            <option value="heart">Heart</option>
+                                            <option value="ent">ENT</option>
+                                            <option value="eye">Eye</option>
+                                            <option value="skin">Skin</option>
+                                            <option value="skin">Gastro-Endology</option>
+                                            <option value="skin">Urology</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Room No</label>
+                                        <input type="text" class="form-control" style="background-color:white; color:black; " name="room" placeholder="write doctor room no" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>New Image</label>
+                                        <br />
+                                        <input type="file" style="" name="file" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        ///
+
+
 
     </div>
     <!-- container-scroller -->
