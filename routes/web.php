@@ -20,7 +20,9 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'ByPass']);
 Route::get('/home', [HomeController::class, 'redirect']);
+
 
 Route::middleware([
     'auth:sanctum',

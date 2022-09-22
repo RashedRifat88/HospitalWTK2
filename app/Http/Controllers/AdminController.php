@@ -15,6 +15,7 @@ class AdminController extends Controller
 
     public function uploadDoctor(Request $request)
     {
+        return $request->all();
         $doctor = new Doctor();
 
         $image = $request->file;
